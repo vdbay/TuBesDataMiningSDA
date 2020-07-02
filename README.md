@@ -1,4 +1,4 @@
-# TuBesDataMiningSDA
+# TuBes Data Mining SDA
 
 Kegiatan jual beli telah dilaksanakan sejak berabad-abad lalu. Cara berjualan pun mengalami evolusi, mulai dari sekadar jual beli semata, dimulainya teknik pemasaran dengan berpromosi, hingga menggunakan teknik pemasaran berdasarkan kebiasaan pembeli. Perkembangan teknologi semakin maju dengan adanya komputer. Komputer sangat membantu manusia untuk memudahkan suatu pekerjaan. Program komputer merupakan salah satu komponen penting dalam komputer. Suatu program sederhana menjadi cikal bakal sebuah aplikasi, hingga perangkat lunak yang sangat mambantu meningkatkan penjualan suatu perusahaan, baik produsen hingga toko.
 
