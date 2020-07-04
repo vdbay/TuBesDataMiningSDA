@@ -16,7 +16,7 @@ public class Mainprogram extends Combination{
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int arr[] = {1, 2, 3}; 
+        String arr[] = {"buku","sendal", "pulpen"}; 
 	int r; 
 	int n = arr.length; 
         for(r=1;r<=n;r++)
