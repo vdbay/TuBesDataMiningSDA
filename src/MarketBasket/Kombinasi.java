@@ -17,6 +17,7 @@ public class Kombinasi {
     static int column[];
     static ArrayList<String> ndx;
     static ArrayList<ArrayList<String>> ndxs;
+    
     static int ke;
     /**
      * @param args the command line arguments
