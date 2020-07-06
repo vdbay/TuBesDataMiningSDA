@@ -12,11 +12,11 @@ import java.util.*;
  * @author Acer
  */
 public class Mainprogram extends Combination{
-    public static void makeRandomTransactionCSV(int jumlah) throws IOException{
+    public static void makeRandomTransactionCSV(int jumlahtransaksi,int jumlahproduk) throws IOException{
         // Our example data
         
         Random rand = new Random();
-        int rand_int=rand.nextInt(jumlah);
+        int rand_int;
 
         FileWriter csvWriter = new FileWriter("DataTransaction.csv");
         csvWriter.append("Pelanggan");
@@ -24,11 +24,14 @@ public class Mainprogram extends Combination{
         csvWriter.append("Orderan");
         csvWriter.append("\n");
 
-        for (int i=1;i<=jumlah;i++) {
+        for (int i=1;i<=jumlahtransaksi;i++) {
             csvWriter.append(Integer.toString(i));
-            rand_int=rand.nextInt(jumlah);
             csvWriter.append(", ");
-            csvWriter.append(Integer.toString(rand_int));
+            for(int j=1;j<=jumlahproduk;j++){
+                rand_int=(rand.nextInt(jumlahtransaksi)%jumlahproduk)+1;
+                csvWriter.append(Integer.toString(rand_int));
+                csvWriter.append("; ");
+            }
             csvWriter.append("\n");
         }
 
@@ -40,7 +43,7 @@ public class Mainprogram extends Combination{
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        makeRandomTransactionCSV(100);
+        makeRandomTransactionCSV(100,100);
 //        String arr[] = {"buku","sendal", "pulpen"}; 
 //	int r; 
 //	int n = arr.length; 
