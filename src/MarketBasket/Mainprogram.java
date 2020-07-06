@@ -28,7 +28,7 @@ public class Mainprogram extends Combination{
             csvWriter.append(Integer.toString(i));
             csvWriter.append(", ");
             for(int j=1;j<=jumlahproduk;j++){
-                rand_int=(rand.nextInt(jumlahtransaksi)%jumlahproduk)+1;
+                rand_int=(rand.nextInt(jumlahproduk)%jumlahproduk)+1;
                 csvWriter.append(Integer.toString(rand_int));
                 csvWriter.append("; ");
             }
