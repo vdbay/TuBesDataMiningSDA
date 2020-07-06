@@ -43,7 +43,12 @@ public class Mainprogram extends Combination{
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        makeRandomTransactionCSV(100,100);
+        Scanner input = new Scanner(System.in);
+        System.out.println("Input berapa jumlah transaksi yang akan dibuat:\n");
+        int jmltransaksi=input.nextInt();
+        System.out.println("Input jumlah barang yang ada di toko:\n");
+        int jmlbarang=input.nextInt();
+        makeRandomTransactionCSV(jmltransaksi,jmlbarang);
 //        String arr[] = {"buku","sendal", "pulpen"}; 
 //	int r; 
 //	int n = arr.length; 
