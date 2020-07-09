@@ -19,14 +19,12 @@ public class Mainprogram extends Combination{
         int rand_int;
 
         FileWriter csvWriter = new FileWriter("DataTransaction.csv");
-        csvWriter.append("Transaksi");
-        csvWriter.append("\n");
 
         for (int i=1;i<=jumlahtransaksi;i++) {
             for(int j=1;j<=jumlahproduk;j++){
                 rand_int=(rand.nextInt(jumlahproduk)%jumlahproduk)+1;
                 csvWriter.append(Integer.toString(rand_int));
-                csvWriter.append(", ");
+                csvWriter.append(",");
             }
             csvWriter.append("\n");
         }
