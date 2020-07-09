@@ -17,7 +17,7 @@ Dengan demikian, kami bersepakat untuk membuat program <i>Data Mining</i> (penam
 
 ### Dosen Pengampu
 
-| Nama                    | NIP                |
-| ----------------------- | ------------------ |
-| Ani Rahmani             | 196810141993032002 |
-| Lumannul Hakim Firdaus  | 199301062019031017 |
+| Nama                                  | NIP                |
+| -----------------------               | ------------------ |
+| Ani Rahmani, A.Md., S.Si., M.T.       | 196810141993032002 |
+| Lumannul Hakim Firdaus, S.Kom., M.T.  | 199301062019031017 |
