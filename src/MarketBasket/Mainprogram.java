@@ -34,7 +34,7 @@ public class Mainprogram extends Combination{
         csvWriter.flush();
         csvWriter.close();
     }
-    public static void readTransaction(){
+    public static void readTransaction(int jumlahproduk){
         String line = "";
         String splitBy = ",";
         int i = 0;
@@ -45,35 +45,29 @@ public class Mainprogram extends Combination{
             {
                 i = i + 1;
                 String[] employee = line.split(splitBy); // use comma as separator  
-                System.out.println("Transaksi " + i + " : " + employee[0] + ", " + employee[1]);
+                System.out.println("Transaksi " + i + " : ");
+                for(int j=0;j<jumlahproduk;j++){
+                    System.out.println(employee[j]);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    /**
-     * @param args the command line arguments
-     */
-    public static void makeTransaction(String[] args) throws IOException {
-        // TODO code application logic here
-        Scanner input = new Scanner(System.in);
+
+    
+    public static void main(String[] args) throws IOException {
+     System.out.println("Masukkan pilihan Anda:\n");
+     System.out.println("1. Buat Transaksi\n");
+     Scanner input = new Scanner(System.in);
         System.out.println("Input berapa jumlah transaksi yang akan dibuat:\n");
         int jmltransaksi=input.nextInt();
         System.out.println("Input jumlah barang yang ada di toko:\n");
         int jmlbarang=input.nextInt();
         makeRandomTransactionCSV(jmltransaksi,jmlbarang);
-        readTransaction();
-//        String arr[] = {"buku","sendal", "pulpen"}; 
-//	int r; 
-//	int n = arr.length; 
-//        for(r=1;r<=n;r++)
-//	printCombination(arr, n, r);
-    }
-    
-    public static void main(String[] args) {
-     System.out.println("Masukkan pilihan Anda:\n");
-     System.out.println("1. Buat transaksi\n");
-     System.out.println("2. Baca transaksi terakhir\n");
+        readTransaction(jmlbarang);
+     System.out.println("2. Close?\n");
+     
     }
     
 }
