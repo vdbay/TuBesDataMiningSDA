@@ -54,7 +54,7 @@ public class Mainprogram extends Combination{
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
+    public static void makeTransaction(String[] args) throws IOException {
         // TODO code application logic here
         Scanner input = new Scanner(System.in);
         System.out.println("Input berapa jumlah transaksi yang akan dibuat:\n");
@@ -68,6 +68,12 @@ public class Mainprogram extends Combination{
 //	int n = arr.length; 
 //        for(r=1;r<=n;r++)
 //	printCombination(arr, n, r);
+    }
+    
+    public static void main(String[] args) {
+     System.out.println("Masukkan pilihan Anda:\n");
+     System.out.println("1. Buat transaksi\n");
+     System.out.println("2. Baca transaksi terakhir\n");
     }
     
 }
