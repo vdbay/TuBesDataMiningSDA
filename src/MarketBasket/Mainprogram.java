@@ -4,6 +4,8 @@
  * Date :
  */
 package MarketBasket;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
@@ -31,6 +33,23 @@ public class Mainprogram extends Combination{
 
         csvWriter.flush();
         csvWriter.close();
+    }
+    public static void readTransaction(){
+        String line = "";
+        String splitBy = ",";
+        int i = 0;
+        try {
+            //parsing a CSV file into BufferedReader class constructor  
+            BufferedReader br = new BufferedReader(new FileReader("DataTransaction.csv"));
+            while ((line = br.readLine()) != null) //returns a Boolean value  
+            {
+                i = i + 1;
+                String[] employee = line.split(splitBy); // use comma as separator  
+                System.out.println("Transaksi " + i + " : " + employee[0] + ", " + employee[1]);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     /**
      * @param args the command line arguments
