@@ -62,6 +62,7 @@ public class Mainprogram extends Combination{
         System.out.println("Input jumlah barang yang ada di toko:\n");
         int jmlbarang=input.nextInt();
         makeRandomTransactionCSV(jmltransaksi,jmlbarang);
+        readTransaction();
 //        String arr[] = {"buku","sendal", "pulpen"}; 
 //	int r; 
 //	int n = arr.length; 
