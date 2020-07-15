@@ -9,10 +9,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
-/**
- *
- * @author Acer
- */
+
 public class Mainprogram extends Combination{
     public static void makeRandomTransactionCSV(int jumlahtransaksi,int jumlahproduk) throws IOException{
         // Our example data
@@ -41,11 +38,12 @@ public class Mainprogram extends Combination{
         try {
             //parsing a CSV file into BufferedReader class constructor  
             BufferedReader br = new BufferedReader(new FileReader("DataTransaction.csv"));
-            while ((line = br.readLine()) != null) //returns a Boolean value  
+            System.out.println("\nHasil:");
+            while ((line = br.readLine()) != null) //returns a Boolean value
             {
                 i = i + 1;
                 String[] employee = line.split(splitBy); // use comma as separator  
-                System.out.println("Transaksi " + i + " : ");
+                System.out.println("\nTransaksi ke-" + i + ":");
                 for(int j=0;j<jumlahproduk;j++){
                     System.out.println(employee[j]);
                 }
@@ -63,9 +61,7 @@ public class Mainprogram extends Combination{
         System.out.println("Masukkan jumlah barang yang ada di toko: ");
         int jmlbarang=input.nextInt();
         makeRandomTransactionCSV(jmltransaksi,jmlbarang);
-        readTransaction(jmlbarang);
-        //System.out.println("2. Close?\n");
-     
+        readTransaction(jmlbarang);   
     }
     
 }

@@ -5,10 +5,6 @@
  */
 package MarketBasket;
 
-/**
- *
- * @author Acer
- */
 import java.io.*; 
 import java.util.Arrays;
 

@@ -5,10 +5,6 @@
  */
 package MarketBasket;
 
-/**
- *
- * @author Acer
- */
 public class Barang {
     private String nama;
 }
