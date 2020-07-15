@@ -57,16 +57,14 @@ public class Mainprogram extends Combination{
 
     
     public static void main(String[] args) throws IOException {
-     System.out.println("Masukkan pilihan Anda:\n");
-     System.out.println("1. Buat Transaksi\n");
-     Scanner input = new Scanner(System.in);
-        System.out.println("Input berapa jumlah transaksi yang akan dibuat:\n");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Masukkan jumlah transaksi yang akan dibuat: ");
         int jmltransaksi=input.nextInt();
-        System.out.println("Input jumlah barang yang ada di toko:\n");
+        System.out.println("Masukkan jumlah barang yang ada di toko: ");
         int jmlbarang=input.nextInt();
         makeRandomTransactionCSV(jmltransaksi,jmlbarang);
         readTransaction(jmlbarang);
-     System.out.println("2. Close?\n");
+        //System.out.println("2. Close?\n");
      
     }
     
