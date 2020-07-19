@@ -1,8 +1,9 @@
 /*
- * Project Name :
- * Author :
- * Date :
+Program			: Kombinasi.java
+Author			: Azhar Subhan Fauzi; Johan Salusu
+Versi / Tanggal         : 0.7 Alpha/03-Jul-20
  */
+
 package MarketBasket;
 
 import java.util.ArrayList;

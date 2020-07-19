@@ -1,8 +1,9 @@
 /*
- * Project Name :
- * Author :
- * Date :
+Program			: MainProgram.java
+Author			: Azhar Subhan Fauzi; Johan Salusu
+Versi / Tanggal         : 0.7 Alpha/03-Jul-20
  */
+
 package MarketBasket;
 import static MarketBasket.Kombinasi.generate;
 import java.io.BufferedReader;
@@ -86,7 +87,7 @@ public class MainProgram{
         int jmlbarang=input.nextInt();
         namabarang=new String[jmlbarang];
         for(int i=1;i<=jmlbarang;i++){
-            System.out.println("Nama barang ke "+i);
+            System.out.println("Masukkan nama barang ke-"+i+":");
             namabarang[i-1]=input.next();
         }
         makeRandomTransactionCSV(jmltransaksi,jmlbarang);
@@ -96,7 +97,7 @@ public class MainProgram{
         //System.out.println(kombinasi);
         //System.out.println(datatransaction);
         hitungSupport(kombinasi,datatransaction);
-        System.out.println("\nsupport : "+Arrays.toString(support));
+        System.out.println("\nSupport: "+Arrays.toString(support));
         for(int i=0;i<namabarang.length;i++)System.out.println(namabarang[i]);
         
     }
