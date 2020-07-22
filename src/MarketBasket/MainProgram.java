@@ -15,7 +15,7 @@ import java.util.*;
 public class MainProgram{
     static ArrayList<TreeSet<String>> datatransaction=new ArrayList<>();
     static int[] support;
-    static String[] namabarang;
+    static int threshold;
     public static void makeRandomTransactionCSV(int jumlahtransaksi,int jumlahproduk) throws IOException{
         Random rand = new Random();
         int rand_int;
@@ -38,24 +38,19 @@ public class MainProgram{
         TreeSet<String> temp = new TreeSet<>();
         try {
             BufferedReader br = new BufferedReader(new FileReader("DataTransaction.csv"));
-            //System.out.println("\nHasil:");
             int index = -1;
             
             while ((line = br.readLine()) != null) //returns a Boolean value
             {
                 i = i + 1;
                 temp = new TreeSet<String>();
-                String[] employee = line.split(splitBy); // use comma as separator
-                //System.out.println("\nTransaksi ke-" + i + ":");
+                String[] barang = line.split(splitBy); // use comma as separator
                 for(int j=0;j<jumlahproduk;j++){
-                    //System.out.print(employee[j]+", ");
-                    temp.add(employee[j]);
+                    temp.add(barang[j]);
                 }
                 index++;
-               //System.out.println(temp);
                 datatransaction.add(index, temp);
             }
-            //System.out.println(datatransaction);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -63,43 +58,37 @@ public class MainProgram{
     public static void hitungSupport(ArrayList<TreeSet<String>> kombinasi,ArrayList<TreeSet<String>> dataTransaksi){
         
         support=new int[kombinasi.size()];
-//        Object[] kombinasiArray=kombinasi.toArray();
-//        Object[] dataTransaksiArray=dataTransaksi.toArray();
-//        System.out.println(kombinasiArray[0]);
-//        System.out.print(dataTransaksiArray[0]);
         for(int i=0;i<kombinasi.size();i++){
             for(int j=0;j<dataTransaksi.size();j++){
-                //System.out.print(kombinasi.get(i)+" "+dataTransaksi.get(j));
-                //System.out.println(kombinasi.get(i).equals(dataTransaksi.get(j)));
                 if(kombinasi.get(i).equals(dataTransaksi.get(j))){
-                    //System.out.println(kombinasi.get(i)+" "+dataTransaksi.get(j));
                     support[i]=support[i]+1;
                 }
             }
         }
     }
     
+    public static void hitungThreshold(int jmltransaksi,  ArrayList<TreeSet<String>> kombinasi){
+        for(int i=0;i<support.length;i++){
+            if(support[i]>=threshold){
+                System.out.println(kombinasi.get(i)+" recommended");
+            }
+        }
+    }
+    
     public static void main(String[] args) throws IOException {
         Scanner input = new Scanner(System.in);
-        System.out.println("Masukkan jumlah transaksi yang akan dibuat: ");
+        System.out.print("Masukkan jumlah transaksi yang akan dibuat: ");
         int jmltransaksi=input.nextInt();
-        System.out.println("Masukkan jumlah barang yang ada di toko: ");
+        System.out.print("Masukkan jumlah barang yang ada di toko: ");
         int jmlbarang=input.nextInt();
-        namabarang=new String[jmlbarang];
-        for(int i=1;i<=jmlbarang;i++){
-            System.out.println("Masukkan nama barang ke-"+i+":");
-            namabarang[i-1]=input.next();
-        }
+        System.out.print("Masukkan threshold barang (jumlah barang): ");
         makeRandomTransactionCSV(jmltransaksi,jmlbarang);
+        threshold=input.nextInt();
         readTransaction(jmlbarang);   
         ArrayList<TreeSet<String>> kombinasi = generate(jmlbarang);
-        //System.out.println("\n");
-        //System.out.println(kombinasi);
-        //System.out.println(datatransaction);
         hitungSupport(kombinasi,datatransaction);
-        System.out.println("\nSupport: "+Arrays.toString(support));
-        for(int i=0;i<namabarang.length;i++)System.out.println(namabarang[i]);
-        
+        System.out.println("\nsupport: "+Arrays.toString(support));
+        hitungThreshold(jmltransaksi,kombinasi);
     }
     
 }
